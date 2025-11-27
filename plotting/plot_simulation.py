@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
-import layer_only_simulation as sim
+import position_in_layer_simulation as sim
 # type: ignore
 
 # Define layers

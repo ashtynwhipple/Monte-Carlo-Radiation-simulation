@@ -5,7 +5,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
-import layer_only_simulation as sim
+import position_in_layer_simulation as sim
 from materials import layers  # now 'layers' is the list
 # type: ignore
 
@@ -16,41 +16,12 @@ for layer, color in zip(layers, colors):
 
 n = 10000
 
-results = sim.multiple_layers(n)
-
 num_protons = int(n) # I want to use all of them so maybe make the plot bigger? idk... come back to this
 body_width = 1.0  # x-axis
 body_depth = 1.0  # y-axis
 
 # Store proton positions
-proton_positions = []
-
-# Simulate protons
-# for _ in range(num_protons):
-#     x = np.random.uniform(-0.5, 0.5)
-#     y = np.random.uniform(-0.5, 0.5)
-#     z = 0
-#     alive = True
-
-#     for layer in layers:
-#         if not alive:
-#             break
-#         prob_survive = np.exp(-layer["mu"] * layer["thickness"])
-#         if np.random.rand() > prob_survive:
-#             # stopped in this layer
-#             z += np.random.uniform(0, layer["thickness"])
-#             proton_positions.append([x, y, z])
-#             alive = False
-#         else:
-#             z += layer["thickness"]
-
-#     if alive:
-#         # survived all layers, scatter slightly at exit
-#         x += np.random.normal(0, 0.05)
-#         y += np.random.normal(0, 0.05)
-#         proton_positions.append([x, y, z])
-
-# proton_positions = np.array(proton_positions)
+proton_positions = sim.simulate_all_positions()
 
 # Plot
 fig = plt.figure(figsize=(8, 6))
@@ -76,8 +47,8 @@ for layer in layers:
     z_start += thickness
 
 # Scatter proton positions
-# ax.scatter(proton_positions[:,0], proton_positions[:,1], proton_positions[:,2],
-#            color='red', s=5)
+ax.scatter(proton_positions[:,0], proton_positions[:,1], proton_positions[:,2],
+           color='red', s=5)
 
 ax.set_xlabel('X')
 ax.set_ylabel('Y')

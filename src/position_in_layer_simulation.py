@@ -1,5 +1,7 @@
+# type: ignore
 import numpy as np
 from materials import layers
+# type: ignore
 
 def simulate_proton_position(layers):
     """
@@ -20,3 +22,13 @@ def simulate_proton_position(layers):
             z_start += thickness
     # proton made it through all layers
     return "transmitted", z_start
+
+def simulate_all_positions(N=10000):
+    positions = []
+    for _ in range(N):
+        layer_name, z = simulate_proton_position(layers)
+        # assign random x, y inside body width/depth
+        x = np.random.uniform(-0.5, 0.5)
+        y = np.random.uniform(-0.5, 0.5)
+        positions.append([x, y, z, layer_name])
+    return np.array(positions, dtype=object)  # keep layer_name
