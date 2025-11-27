@@ -14,14 +14,13 @@ colors = ["peachpuff", "lightyellow", "lightcoral", "lightgray"]
 for layer, color in zip(layers, colors):
     layer["color"] = color
 
-n = 10000
+n = 500
 
-num_protons = int(n) # I want to use all of them so maybe make the plot bigger? idk... come back to this
 body_width = 1.0  # x-axis
 body_depth = 1.0  # y-axis
 
 # Store proton positions
-proton_positions = sim.simulate_all_positions()
+proton_positions = sim.simulate_all_positions(n)
 
 # Plot
 fig = plt.figure(figsize=(8, 6))
@@ -48,7 +47,7 @@ for layer in layers:
 
 # Scatter proton positions
 ax.scatter(proton_positions[:,0], proton_positions[:,1], proton_positions[:,2],
-           color='red', s=5)
+           color='red', s=1)
 
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
