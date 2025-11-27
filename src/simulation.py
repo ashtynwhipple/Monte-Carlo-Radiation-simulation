@@ -1,4 +1,5 @@
-import numpy as np
+# type: ignore
+import numpy as np # type: ignore
 from materials import layers
 
 def simulate_particle(mu, slab_thickness):
@@ -89,5 +90,3 @@ def multiple_layers(N=10000):
             layer_energy[result] += 1
 
     return layer_energy
-
-print(multiple_layers())
