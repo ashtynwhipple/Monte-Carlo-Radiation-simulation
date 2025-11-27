@@ -2,8 +2,7 @@
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
-import src.simulation as sim  # type: ignore
-
+import layer_only_simulation as sim  # type: ignore
 
 from matplotlib import pyplot as plt
 
