@@ -1,2 +1,2 @@
 # Monte-Carlo-Radiation-simulation
-A lightweight Python simulation that models photon transport through layered tissue using Monte Carlo methods to estimate dose versus depth.
+A small educational project demonstrating the core ideas behind radiation transport in medical physics. Photons are simulated as they pass through layered tissue, undergoing scattering, absorption, and energy loss based on probabilistic rules. The goal is to visualize how dose builds up and attenuates with depth.
