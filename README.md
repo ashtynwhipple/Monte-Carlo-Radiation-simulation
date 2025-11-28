@@ -114,27 +114,27 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 
 # Educational Goals
 
-This project illustrates:
-Monte Carlo sampling
-Exponential attenuation
-Proton stopping distributions
-How dose varies with depth
-How tissue composition affects interaction rates
-Basic scientific visualization in Python
+### This project illustrates:
+* Monte Carlo sampling
+* Exponential attenuation
+* Proton stopping distributions
+* How dose varies with depth
+* How tissue composition affects interaction rates
+* Basic scientific visualization in Python
 
-This makes it useful for coursework or independent study in:
-Medical Physics
-Nuclear Engineering
-Radiation Therapy
-Computational Physics
-Applied Mathematics
+### This makes it useful for coursework or independent study in:
+* Medical Physics
+* Nuclear Engineering
+* Radiation Therapy
+* Computational Physics
+* Applied Mathematics
 
 # Future Improvements
 Possible extensions:
-Proton energy loss using Bethe–Bloch
-Scattering angle simulation
-Realistic beam width and divergence
-Voxel-based body instead of layers
-Bragg peak modeling
-GPU acceleration
+* Proton energy loss using Bethe–Bloch
+* Scattering angle simulation
+* Realistic beam width and divergence
+* Voxel-based body instead of layers
+* Bragg peak modeling
+*GPU acceleration
 
